@@ -151,7 +151,7 @@ public class Exchange {
 			//Apply the above fee to the account balance of the seller
 			accounts.getTraderAccount(t.getSeller()).applyFee(t);
 			//Apply the trade payment to the account balance of the seller (they earned money)
-			accounts.getTraderAccount(t.getSeller()).withdrawMoney(t.getValue());
+			accounts.getTraderAccount(t.getSeller()).addMoney(t.getValue());
 			//Deduct the sold stocks from the position of the seller
 			accounts.getTraderAccount(t.getSeller()).deductFromPosition(t.getSecurity().getTicker(), t.getQuantity());
 			
